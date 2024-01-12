@@ -1,0 +1,20 @@
+def find_max_substring(t, z):
+    max_value = 0
+
+    for i in range(len(t)):
+        for j in range(i + 1, len(t) + 1):
+            substring = t[i:j]
+            occurrences = z.count(substring)
+            current_value = len(substring) * occurrences
+
+            if current_value > max_value:
+                max_value = current_value
+
+    return max_value
+
+# Example usage
+t = "acldm1labcdhsnd"
+z = "shabcdacasklksjabcdfueuabcdfhsndsabcdmdabcdfa"
+
+result = find_max_substring(t, z)
+print(result)
